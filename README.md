@@ -93,7 +93,33 @@ This image confirms a successful **account lockout simulation in Active Director
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+## 🚫 Account Disabled – Login Error (Client-1)
+
+### 🖼️ What’s Shown
+
+This screenshot shows a **login failure message** on `Client-1` due to a **disabled user account**. The system displays:
+
+> _"Your account has been disabled. Ask your admin or tech support for help."_
+
+Additional details:
+- **Error Code**: 0x2823  
+- **Extended Error Code**: 0x0
+
+---
+
+### 🧪 How We Got Here (Steps)
+
+1. Logged into the **Domain Controller (DC-1)**.
+2. Opened **Active Directory Users and Computers (ADUC)**.
+3. **Purposely disabled** a test user account to simulate a real-world lockout scenario.
+4. Switched to `Client-1` and attempted to log in using the disabled account.
+5. The login failed, triggering the account-disabled message.
+
+---
+
+### ✅ Summary
+
+This was an intentional test to demonstrate how **disabling an Active Directory account** immediately blocks login attempts. This method is often used by IT admins for security, offboarding, or account control.
 </p>
 <br />
 
@@ -102,5 +128,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
 </p>
