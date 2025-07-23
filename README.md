@@ -55,6 +55,7 @@ Before starting this lab, make sure you meet the following requirements:
 
 <h2>Deployment and Configuration Steps</h2>
 
+Image 1.
 <p>
 Account Lockout and Unlock (https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
 
@@ -87,11 +88,9 @@ This screen is used to manually unlock the user account.
 This image confirms a successful **account lockout simulation in Active Directory**. It visually verifies the lab's goal of demonstrating how incorrect login attempts trigger account lockout and how administrators can identify and unlock accounts via ADUC.
 </p>
 <br />
-
+Image 2.
 <p>
 Your account has been disabled messege (https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3a)
-
-</p>
 <p>
 ## 🚫 Account Disabled – Login Error (Client-1)
 
@@ -122,7 +121,7 @@ Additional details:
 This was an intentional test to demonstrate how **disabling an Active Directory account** immediately blocks login attempts. This method is often used by IT admins for security, offboarding, or account control.
 </p>
 <br />
-
+Image 3.
 <p>
 Observing default domain policy logs (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
 
