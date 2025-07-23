@@ -89,7 +89,7 @@ This image confirms a successful **account lockout simulation in Active Director
 <br />
 
 <p>
-![your account has been disabled msg, from AD lab](https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3a)
+Your account has been disabled messege (https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3a)
 
 </p>
 <p>
@@ -124,9 +124,31 @@ This was an intentional test to demonstrate how **disabling an Active Directory 
 <br />
 
 <p>
-![observing default domain policy logs, AD lab](https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
+Observing default domain policy logs (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
 
 </p>
 <p>
+## 🛡️ Group Policy Management – Default Domain Policy
 
+### 🖼️ What’s Shown
+
+The screenshot displays the **Group Policy Management Console (GPMC)** on the Domain Controller. The **Default Domain Policy** is selected, and details like domain name, creation time, and GPO status are visible.
+
+---
+
+### 🧪 How We Got Here (Steps)
+
+1. Logged into the **Domain Controller (DC-1)**.
+2. Opened **Group Policy Management**.
+3. Navigated to **Group Policy Objects** under the domain (`mydomain.com`).
+4. Selected the **Default Domain Policy** to review or modify settings (e.g., account lockout policy).
+5. As part of the lab, also began **observing system and security logs** to monitor the effects of these policies in:
+   - **Event Viewer** on the Domain Controller
+   - **Event Viewer** on `Client-1` for user-level events
+
+---
+
+### ✅ Summary
+
+This part of the lab focuses on understanding how **Group Policy settings** like account lockout thresholds are applied across the domain. Observing logs in **Event Viewer** helps confirm that the policy changes are working and provides insight into login attempts, lockouts, and other security events.
 </p>
