@@ -56,11 +56,35 @@ Before starting this lab, make sure you meet the following requirements:
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-(https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
+Account Lockout and Unlock (https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
 
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+## 🔐 Account Lockout and Unlock – Lab Snapshot
+
+### 🖼️ What’s Shown
+
+The screenshot displays the **Active Directory Users and Computers (ADUC)** interface, specifically the **user properties dialog** of a locked-out account. The message confirms:
+
+> _"Unlock account. This account is currently locked out on this Active Directory Domain Controller."_
+
+This screen is used to manually unlock the user account.
+
+---
+
+### 🧭 How We Got Here – Summary Steps
+
+1. **Logged into the Domain Controller (`DC-1`)**
+2. **Created or selected a test user account**
+3. **Simulated a lockout** by attempting to log in multiple times (e.g., 5 or more) with an incorrect password
+4. **Observed the lockout** message indicating the account was locked via AD
+5. **Opened ADUC** → Navigated to the user's properties → Observed the account lockout status
+
+---
+
+### ✅ Summary
+
+This image confirms a successful **account lockout simulation in Active Directory**. It visually verifies the lab's goal of demonstrating how incorrect login attempts trigger account lockout and how administrators can identify and unlock accounts via ADUC.
 </p>
 <br />
 
