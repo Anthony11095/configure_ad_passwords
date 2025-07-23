@@ -56,7 +56,7 @@ Before starting this lab, make sure you meet the following requirements:
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-![password reset, password attempts, hpw long locked out](https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
+(https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
 
 </p>
 <p>
