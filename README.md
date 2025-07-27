@@ -19,102 +19,46 @@ This tutorial outlines enabling, unlocking accounts, and resetting paswords, on-
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
+## ✅ Prerequisites
+
+Before beginning the installation of osTicket, ensure the following prerequisites are met:
+
+- **Operating System**
+  - Windows 10 or Windows Server (for VM setup)
+
+- **Virtualization Platform**
+  - Azure Virtual Machine (or alternative virtualization environment)
+
+- **osTicket Software**
+  - osTicket installation zip file (latest version from official site)
+
+- **Web Server**
+  - IIS (Internet Information Services) installed and configured
+
+- **Database Server**
+  - MySQL (or MariaDB) installed and running
+
+- **Scripting Language**
+  - PHP (version compatible with osTicket)
+
+- **Other Tools**
+  - Web browser (e.g., Chrome, Firefox)
+  - Text editor (e.g., Notepad++, VS Code)
+
+- **Access Requirements**
+  - Administrator access to the VM or local machine
+  - Active internet connection
+
+- **Optional**
+  - phpMyAdmin (for easier database management)
+  - Mail server setup (if testing ticket email functionality)
 
 <h2>Deployment and Configuration Steps</h2>
 
-Image 1.
-<p>
-Account Lockout and Unlock (https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
+(https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
 
-</p>
-<p>
-## 🔐 Account Lockout and Unlock – Lab Snapshot
 
-### 🖼️ What’s Shown
+(https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3a)
 
-The screenshot displays the **Active Directory Users and Computers (ADUC)** interface, specifically the **user properties dialog** of a locked-out account. The message confirms:
+ (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
 
-> _"Unlock account. This account is currently locked out on this Active Directory Domain Controller."_
-
-This screen is used to manually unlock the user account.
-
----
-
-### 🧭 How We Got Here – Summary Steps
-
-1. **Logged into the Domain Controller (`DC-1`)**
-2. **Created or selected a test user account**
-3. **Simulated a lockout** by attempting to log in multiple times (e.g., 5 or more) with an incorrect password
-4. **Observed the lockout** message indicating the account was locked via AD
-5. **Opened ADUC** → Navigated to the user's properties → Observed the account lockout status
-
----
-
-### ✅ Summary
-
-This image confirms a successful **account lockout simulation in Active Directory**. It visually verifies the lab's goal of demonstrating how incorrect login attempts trigger account lockout and how administrators can identify and unlock accounts via ADUC.
-</p>
-<br />
-Image 2.
-<p>
-Your account has been disabled messege (https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3a)
-<p>
-## 🚫 Account Disabled – Login Error (Client-1)
-
-### 🖼️ What’s Shown
-
-This screenshot shows a **login failure message** on `Client-1` due to a **disabled user account**. The system displays:
-
-> _"Your account has been disabled. Ask your admin or tech support for help."_
-
-Additional details:
-- **Error Code**: 0x2823  
-- **Extended Error Code**: 0x0
-
----
-
-### 🧪 How We Got Here (Steps)
-
-1. Logged into the **Domain Controller (DC-1)**.
-2. Opened **Active Directory Users and Computers (ADUC)**.
-3. **Purposely disabled** a test user account to simulate a real-world lockout scenario.
-4. Switched to `Client-1` and attempted to log in using the disabled account.
-5. The login failed, triggering the account-disabled message.
-
----
-
-### ✅ Summary
-
-This was an intentional test to demonstrate how **disabling an Active Directory account** immediately blocks login attempts. This method is often used by IT admins for security, offboarding, or account control.
-</p>
-<br />
-Image 3.
-<p>
-Observing default domain policy logs (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
-
-</p>
-<p>
-## 🛡️ Group Policy Management – Default Domain Policy
-
-### 🖼️ What’s Shown
-
-The screenshot displays the **Group Policy Management Console (GPMC)** on the Domain Controller. The **Default Domain Policy** is selected, and details like domain name, creation time, and GPO status are visible.
-
----
-
-### 🧪 How We Got Here (Steps)
-
-1. Logged into the **Domain Controller (DC-1)**.
-2. Opened **Group Policy Management**.
-3. Navigated to **Group Policy Objects** under the domain (`mydomain.com`).
-4. Selected the **Default Domain Policy** to review or modify settings (e.g., account lockout policy).
-5. As part of the lab, also began **observing system and security logs** to monitor the effects of these policies in:
-   - **Event Viewer** on the Domain Controller
-   - **Event Viewer** on `Client-1` for user-level events
-
----
-
-### ✅ Summary
-
-This part of the lab focuses on understanding how **Group Policy settings** like account lockout thresholds are applied across the domain. Observing logs in **Event Viewer** helps confirm that the policy changes are working and provides insight into login attempts, lockouts, and other security events.
-</p>
