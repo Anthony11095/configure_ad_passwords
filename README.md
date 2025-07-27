@@ -53,12 +53,71 @@ Before beginning the installation of osTicket, ensure the following prerequisite
   - phpMyAdmin (for easier database management)
   - Mail server setup (if testing ticket email functionality)
 
-<h2>Deployment and Configuration Steps</h2>
+## 🛠️ Installation Steps: Account Lockout, Disable/Enable, and Group Policy
 
-(https://github.com/user-attachments/assets/3e7fa2c2-838a-4ccc-9039-72d69046e0c0)
+Follow the instructions below for configuring account lockout, disabling/enabling accounts, and applying Group Policy settings. Insert your screenshots exactly where indicated.
 
+---
 
-(https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3a)
-
+### 1. Configure Group Policy for Account Lockout
  (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
+- Log into `DC-1`
+- Open **Group Policy Management**
+- Edit the **Default Domain Policy**
+- Navigate to:
+  `Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy`
+- Set:
+  - **Account lockout threshold**: 5 invalid attempts  
+  - **Lockout duration**: 15 minutes  
+  - **Reset account lockout counter**: 15 minutes
+
+
+---
+
+### 2. Simulate an Account Lockout
+(https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3ao)
+- Pick a test user account (e.g., `dudut.r`)
+- On `Client-1`, try logging in with the wrong password **more than 5 times**
+- The account will lock out
+- Go back to `DC-1`, open **Active Directory Users and Computers**
+- Search for the user and open their **Properties**
+- Verify the "Account is locked out" checkbox is active
+
+> 📸 **Insert Photo 1 here** — *This shows the locked-out account status in ADUC for user `dudut.r`.*
+
+---
+
+### 3. Unlock the Account
+ (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
+- On the same **Properties** window
+- Check the **Unlock account** box
+- Optionally reset the password
+- Click **Apply** and **OK**
+
+✅ The user can now log in again.
+
+---
+
+### 4. Disable the Account and Attempt Login
+
+- Go to **Active Directory Users and Computers**
+- Right-click the user account and select **Disable**
+- On `Client-1`, try logging in as that user again
+- You should see an error saying:  
+  *“Your account has been disabled.”*
+
+---
+
+### 5. Re-enable the Account
+
+- Back in ADUC, right-click the account and select **Enable**
+- Try logging in again — it should succeed now.
+
+---
+
+### ✅ Wrap-Up
+
+- Confirm that Group Policy lockout is enforced
+- Verify that disable/re-enable functions correctly
+  
 
