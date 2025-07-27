@@ -19,39 +19,6 @@ This tutorial outlines enabling, unlocking accounts, and resetting paswords, on-
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-## 🔧 Prerequisites
-
-Before starting this lab, make sure you meet the following requirements:
-
-- **Azure Virtual Machines**
-  - Ensure that `DC-1` and `Client-1` VMs are available in the Azure Portal.
-  - Power them on if they are turned off.
-
-- **User Account**
-  - A user account must already exist (created during previous labs or setup).
-
-- **Administrator Access**
-  - You must have admin rights on both the Domain Controller and Client machine.
-
-- **Active Directory**
-  - Active Directory Domain Services (AD DS) should be properly configured on `DC-1`.
-
-- **Group Policy Management**
-  - Group Policy Management Console (GPMC) should be installed and accessible to configure account lockout settings.
-
-- **Internet Connectivity**
-  - Required for accessing external resources and documentation:
-    - [How to Configure Account Lockout Threshold in Group Policy](#)
-    
-
-- **Working Knowledge of the Following Concepts:**
-  - Account lockout policies
-  - Enabling/disabling user accounts in AD
-  - Viewing security logs in both Domain Controllers and client machines
-
-- **Cost-Saving Reminder**
-  - Do **not** delete the VMs after finishing the lab.
-  - To save on Azure costs, stop/turn off the VMs if you're done for the day.
 
 <h2>Deployment and Configuration Steps</h2>
 
