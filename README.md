@@ -60,7 +60,7 @@ Follow the instructions below for configuring account lockout, disabling/enablin
 ---
 
 ### 1. Configure Group Policy for Account Lockout
- (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
+![image](https://github.com/user-attachments/assets/f01d7f1d-cb50-4b3e-87f4-e590ef247dd7)
 - Log into `DC-1`
 - Open **Group Policy Management**
 - Edit the **Default Domain Policy**
@@ -75,7 +75,7 @@ Follow the instructions below for configuring account lockout, disabling/enablin
 ---
 
 ### 2. Simulate an Account Lockout
-(https://github.com/user-attachments/assets/73f68e42-2c02-45c7-9f89-3e3bdc67ae3ao)
+![image](https://github.com/user-attachments/assets/5eba1198-d1a5-45dc-a294-8cc27601aaf8)
 - Pick a test user account (e.g., `dudut.r`)
 - On `Client-1`, try logging in with the wrong password **more than 5 times**
 - The account will lock out
@@ -88,7 +88,8 @@ Follow the instructions below for configuring account lockout, disabling/enablin
 ---
 
 ### 3. Unlock the Account
- (https://github.com/user-attachments/assets/1e140e7d-a227-44a6-9514-002c766f1e10)
+![image](https://github.com/user-attachments/assets/44447053-0528-46da-86e5-fe3cb8be1539)
+
 - On the same **Properties** window
 - Check the **Unlock account** box
 - Optionally reset the password
